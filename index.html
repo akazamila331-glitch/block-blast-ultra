@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0f1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Block Blast">
+<meta name="description" content="Block Blast Ultra — jeu de blocs avec mode aide et mode auto. Installable sur iOS et Android.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Block Blast Ultra</title>
+</head>
+<body>
+
+<header class="hud">
+  <div class="score-box">
+    <span class="label">SCORE</span>
+    <span id="score">0</span>
+  </div>
+  <div class="logo">BLOCK<br>BLAST</div>
+  <div class="score-box">
+    <span class="label">RECORD</span>
+    <span id="best">0</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button id="btn-hint" class="tool" title="Mode aide : montre où placer">💡 <span>Aide</span></button>
+  <button id="btn-auto" class="tool" title="Mode auto : place les blocs tout seul">🤖 <span>Auto</span></button>
+  <button id="btn-install" class="tool tool-accent" title="Installer sur ton téléphone">📱 <span>Installer</span></button>
+  <button id="btn-sound" class="tool" title="Activer/couper le son">🔊</button>
+</div>
+
+<main class="board-wrap">
+  <div id="board" class="board"></div>
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2 id="overlay-title">GAME OVER</h2>
+      <p>Score : <b id="final-score">0</b></p>
+      <p id="new-record" class="record hidden">🏆 NOUVEAU RECORD !</p>
+      <button id="btn-restart" class="big-btn">REJOUER</button>
+    </div>
+  </div>
+</main>
+
+<section id="tray" class="tray"></section>
+
+<p class="tip" id="tip">Glisse une pièce sur la grille — ou active 💡 Aide / 🤖 Auto</p>
+
+<!-- ============ MODAL INSTALLATION ============ -->
+<div id="install-modal" class="modal hidden">
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close">✕</button>
+    <h2>📱 Installer le jeu</h2>
+    <p class="modal-sub">Il s'installe sur ton écran d'accueil, comme une vraie app.</p>
+
+    <div id="install-native" class="install-step hidden">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <b>Ton téléphone propose l'installation</b>
+        <p>Appuie sur le bouton ci-dessous :</p>
+        <button id="btn-native-install" class="big-btn">INSTALLER MAINTENANT</button>
+      </div>
+    </div>
+
+    <div id="install-ios" class="install-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <b>iPhone / iPad — Safari</b>
+        <p>Tape sur le bouton <span class="ios-share">⬆ Partager</span> en bas de Safari, puis choisis <b>« Sur l'écran d'accueil »</b>, puis <b>Ajouter</b>.</p>
+      </div>
+    </div>
+
+    <div id="install-android" class="install-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <b>Samsung / Android — Chrome</b>
+        <p>Tape sur le menu <b>⋮</b> en haut à droite, puis <b>« Installer l'application »</b> (ou « Ajouter à l'écran d'accueil »).</p>
+      </div>
+    </div>
+
+    <div id="install-desktop" class="install-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <b>Ordinateur — Chrome / Edge</b>
+        <p>Clique sur l'icône <b>installer</b> à droite de la barre d'adresse (ou menu <b>⋮</b> → « Installer Block Blast Ultra »).</p>
+      </div>
+    </div>
+
+    <div class="install-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <b>Et c'est tout !</b>
+        <p>L'icône apparaît sur ton écran d'accueil. Le jeu marche <b>hors connexion</b> 🎉</p>
+      </div>
+    </div>
+
+    <p class="modal-note">Astuce : ouvre d'abord le site dans ton navigateur (Safari / Chrome), pas dans une messagerie.</p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

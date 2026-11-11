@@ -1,0 +1,16 @@
+{
+  "name": "Block Blast Ultra",
+  "short_name": "BlockBlast",
+  "description": "Jeu de blocs avec mode aide et mode auto. Installable sur iOS et Android.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f1220",
+  "theme_color": "#0f1220",
+  "lang": "fr",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
